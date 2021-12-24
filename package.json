@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch --runInBand",
+    "test:cov": "jest --coverage --runInBand",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "lint-staged": {
+    "*.{tsx,ts}": [
+      "yarn format",
+      "yarn lint"
+    ]
+  },
+  "name": "occam-utils",
+  "author": "Guilherme Minozzi",
+  "module": "dist/occam-utils.esm.js",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@release-it/conventional-changelog": "^1.1.4",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.6.1",
+    "@types/nodemailer": "^6.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "chalk": "^4.1.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "docsify-cli": "^4.4.2",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.4",
+    "jest": "27.0.6",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "release-it": "^14.8.0",
+    "ts-jest": "^27.1.2",
+    "tsconfig-paths": "^3.10.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4"
+  }
+}
