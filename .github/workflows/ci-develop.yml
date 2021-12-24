@@ -47,10 +47,10 @@ jobs:
         run: yarn install --prefer-offline
 
       - name: Running Lint
-        run: yarn lint-staged --base=origin/develop~1 --parallel
+        run: yarn lint
 
       - name: Running Tests
-        run: yarn test --silent --base=origin/develop~1 --parallel
+        run: yarn test --silent
 
       - name: Building Application
-        run: yarn build --base=origin/develop~1
+        run: yarn build
