@@ -52,11 +52,16 @@ jobs:
       - name: Running Tests
         run: yarn test --silent
 
-      - uses: codecov/codecov-action@v2
+      # - uses: codecov/codecov-action@v2
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+      #     files: ../../coverage/clover.xml
+      #     fail_ci_if_error: true
+
+      - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ../../coverage/clover.xml
-          fail_ci_if_error: true
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            threshold: 80
 
       - name: Building Application
         run: yarn build
