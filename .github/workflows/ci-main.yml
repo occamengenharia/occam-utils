@@ -52,5 +52,11 @@ jobs:
       - name: Running Tests
         run: yarn test --silent
 
+      - uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ../../coverage/clover.xml
+          fail_ci_if_error: true
+
       - name: Building Application
         run: yarn build
