@@ -18,8 +18,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "jest --runInBand",
-    "test:watch": "jest --watch --runInBand",
-    "test:cov": "jest --coverage --runInBand",
+    "test:watch": "yarn test -- --watch",
+    "test:cov": "yarn test -- --coverage",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "prepare": "husky install",
     "release": "release-it"
