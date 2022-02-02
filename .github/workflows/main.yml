@@ -1,12 +1,12 @@
-name: Develop CI
+name: Main CI/CD - On push and pull requests
 
 on:
   push:
     branches:
-      - develop
+      - main
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   setup:
@@ -28,8 +28,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: true
 
-      - name: Fetch origin develop
-        run: git fetch origin develop
+      - name: Fetch origin main
+        run: git fetch origin main
 
       - name: Getting yarn cache directory path
         id: yarn-cache-dir-path
@@ -52,12 +52,6 @@ jobs:
       - name: Running Tests
         run: yarn test:ci
 
-      # - uses: codecov/codecov-action@v2
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-      #     files: ../../coverage/clover.xml
-      #     fail_ci_if_error: true
-
       - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -65,3 +59,21 @@ jobs:
 
       - name: Building Application
         run: yarn build
+  
+  deploy:
+    name: Deploying Application
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
+        
+      - name: Create .npmrc file
+        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Deploy NPM
+        run: yarn release
+
+        env: 
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
