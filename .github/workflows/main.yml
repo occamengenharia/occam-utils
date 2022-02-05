@@ -53,16 +53,18 @@ jobs:
         run: yarn test:ci
 
       - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        run: yarn test:cov
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
-            working-directory: ../<rootDir>
             threshold: 80
 
       - name: Building Application
+        id: build
         run: yarn build
   
   deploy:
     name: Deploying Application
+    if: ${{ steps.build.status }} == "completed"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -75,6 +77,5 @@ jobs:
 
       - name: Deploy NPM
         run: yarn release
-
         env: 
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

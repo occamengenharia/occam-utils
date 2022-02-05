@@ -53,9 +53,9 @@ jobs:
         run: yarn test:ci
 
       - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        run: yarn test:cov
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
-            working-directory: ../<rootDir>
             threshold: 80
 
       - name: Building Application
