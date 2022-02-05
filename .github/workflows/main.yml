@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   setup:
@@ -51,11 +48,6 @@ jobs:
 
       - name: Running Tests
         run: yarn test:ci
-
-      - name: Comment with Test Coverage
-        uses: dkershner6/jest-coverage-commenter-action@v1
-        with:
-          github_token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Building Application
         id: build

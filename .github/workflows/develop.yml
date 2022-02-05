@@ -1,9 +1,6 @@
 name: Develop CI - On push and pull requests
 
 on:
-  push:
-    branches:
-      - develop
   pull_request:
     branches:
       - develop
