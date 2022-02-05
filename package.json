@@ -19,7 +19,7 @@
     "build": "tsdx build",
     "test": "jest --runInBand",
     "test:watch": "yarn test --watch",
-    "test:cov": "yarn test --coverage",
+    "test:cov": "yarn test --config ./jest.config.json --coverage",
     "test:ci": "yarn test --silent",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "prepare": "husky install",

@@ -12,6 +12,5 @@
     "src/**/*.ts"
   ],
   "modulePathIgnorePatterns": ["<rootDir>/node_modules"],
-  "testRegex": ".*\\.spec\\.ts$",
-  "coverageDirectory": "./coverage"
+  "testRegex": ".*\\.spec\\.ts$"
 }
