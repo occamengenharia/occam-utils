@@ -63,7 +63,7 @@ jobs:
   
   deploy:
     name: Deploying Application
-    if: ${{ steps.build.status }} == "completed"
+    needs: [setup]    
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
