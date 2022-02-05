@@ -52,10 +52,11 @@ jobs:
       - name: Running Tests
         run: yarn test:ci
 
-      - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      - name: Comment with Test Coverage
+        uses: dkershner6/jest-coverage-commenter-action@v1
         with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            threshold: 80
+          github_token: '${{ secrets.GITHUB_TOKEN }}'
+          test_command: 'yarn test:cov'
 
       - name: Building Application
         run: yarn build
