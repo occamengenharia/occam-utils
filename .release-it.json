@@ -2,7 +2,10 @@
   "git": {
     "requireBranch": "main",
     "commitMessage": "chore: release v${version}",
-    "tagName": "v${version}"
+    "tagName": "v${version}",
+    "tagMessage": "Version ${version}",
+    "push": true,
+    "pushTags": true
   },
   "github": {
     "release": true,
@@ -10,7 +13,6 @@
   },
   "npm": {
     "publish": true,
-    "ignoreVersion": true,
     "skipChecks": true
   },
   "plugins": {
