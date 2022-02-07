@@ -32,10 +32,11 @@
     ]
   },
   "name": "occam-utils",
-  "author": "Guilherme Minozzi",
+  "author": "occamengenharia",
   "module": "dist/occam-utils.esm.js",
   "publishConfig": {
-    "private": true
+    "private": true,
+    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
