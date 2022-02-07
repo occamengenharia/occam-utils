@@ -54,6 +54,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Check exists cache
         uses: actions/cache@v2
@@ -69,13 +71,9 @@ jobs:
         run: yarn --frozen-lockfile
         
       - name: Create .npmrc file
-        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }} && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" > .npmrc
-
-      - name: show content of .npmrc file
-        run: cat .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
       - name: Deploy NPM
         run: yarn release --ci
         env: 
-          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
