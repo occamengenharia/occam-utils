@@ -31,13 +31,13 @@
       "yarn lint"
     ]
   },
-  "name": "occam-utils",
-  "author": "occamengenharia",
-  "module": "dist/occam-utils.esm.js",
   "publishConfig": {
     "private": true,
     "registry": "https://registry.npmjs.org/"
   },
+  "name": "occam-utils",
+  "author": "occamengenharia",
+  "module": "dist/occam-utils.esm.js",
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
