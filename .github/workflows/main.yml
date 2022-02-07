@@ -69,7 +69,7 @@ jobs:
         run: yarn --frozen-lockfile
         
       - name: Create .npmrc file
-        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_PUBLISH_TOKEN }}
+        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_PUBLISH_TOKEN }} && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" > .npmrc
 
       - name: Deploy NPM
         run: yarn release --ci

@@ -5,15 +5,20 @@
     "tagName": "v${version}",
     "tagMessage": "Version ${version}",
     "push": true,
-    "pushTags": true
+    "pushTags": true,
+    "commit": true,
+    "requireCleanWorkingDir": false
+
   },
   "github": {
     "release": true,
-    "releaseName": "Release v${version}"
+    "releaseName": "Release v${version}",
+    "tokenRef": "GITHUB_TOKEN"
   },
   "npm": {
     "publish": true,
-    "skipChecks": true
+    "skipChecks": true,
+    "ignoreVersion": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {
