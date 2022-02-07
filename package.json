@@ -34,6 +34,9 @@
   "name": "occam-utils",
   "author": "Guilherme Minozzi",
   "module": "dist/occam-utils.esm.js",
+  "publishConfig": {
+    "private": true
+  },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
