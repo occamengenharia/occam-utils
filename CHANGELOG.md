@@ -1,3 +1,5 @@
+## [0.1.6](https://github.com/occamengenharia/occam-utils/compare/v0.1.5...v0.1.6) (2022-03-19)
+
 ## [0.1.5](https://github.com/occamengenharia/occam-utils/compare/v0.1.4...v0.1.5) (2022-02-07)
 
 ## [0.1.4](https://github.com/occamengenharia/occam-utils/compare/v0.1.1...v0.1.4) (2022-02-07)
