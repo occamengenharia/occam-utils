@@ -1,1 +1,1 @@
-export type IRemoveSpecials = (input: string | number) => string
+export type IRemoveSpecials = (input: string) => string
