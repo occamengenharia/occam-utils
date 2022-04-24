@@ -1,4 +1,4 @@
-import { CnpjMask } from '.'
+import { cnpjMask } from '.'
 
 const availableCnpj = {
   unformatted: '00000000000000',
@@ -10,14 +10,14 @@ const availableCnpj = {
 
 describe('CnpjMask', () => {
   it('should format cnpj', () => {
-    expect(CnpjMask(availableCnpj.unformatted)).toBe(availableCnpj.formatted)
-    expect(CnpjMask(availableCnpj.formatted)).toBe(availableCnpj.formatted)
+    expect(cnpjMask(availableCnpj.unformatted)).toBe(availableCnpj.formatted)
+    expect(cnpjMask(availableCnpj.formatted)).toBe(availableCnpj.formatted)
   })
 
   it('should not format cnpj when dont have correct all digits', () => {
-    expect(CnpjMask(availableCnpj.incomplete)).toBe(availableCnpj.incomplete)
-    expect(CnpjMask(availableCnpj.withLetters)).toBe(availableCnpj.withLetters)
-    expect(CnpjMask(availableCnpj.withSpecialChars)).toBe(
+    expect(cnpjMask(availableCnpj.incomplete)).toBe(availableCnpj.incomplete)
+    expect(cnpjMask(availableCnpj.withLetters)).toBe(availableCnpj.withLetters)
+    expect(cnpjMask(availableCnpj.withSpecialChars)).toBe(
       availableCnpj.withSpecialChars
     )
   })
