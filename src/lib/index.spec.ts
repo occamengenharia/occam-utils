@@ -1,12 +1,15 @@
+import { Methods } from 'src/test/utils/methods'
 import * as lib from '.'
 
+const methods = Methods.getAllMethods()
 describe('lib', () => {
-  it('should export functions', () => {
+  it('should be defined', () => {
     expect(lib).toBeDefined()
-    expect(lib.onlyNumbers).toBeDefined()
-    expect(lib.cnpjMask).toBeDefined()
-    expect(lib.formatToBrazilianDate).toBeDefined()
-    expect(lib.phoneMask).toBeDefined()
-    expect(lib.removeSpecials).toBeDefined()
+  })
+
+  Object.keys(lib).forEach(method => {
+    it(`${method} is available in the lib`, () => {
+      expect(methods).toContain(method)
+    })
   })
 })
