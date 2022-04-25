@@ -1,7 +1,8 @@
 import * as API from '.'
+import { Methods } from 'src/test/utils/methods'
 
 describe('Public API', () => {
-  const methods = ['onlyNumbers']
+  const methods = Methods.getAllMethods()
 
   Object.keys(API).forEach(method => {
     it(`${method} is available in the Public API`, () => {
