@@ -1,1 +1,5 @@
 export { onlyNumbers } from './only-numbers'
+export { cnpjMask } from './cnpj-mask'
+export { formatToBrazilianDate } from './formata-to-brazilian-date'
+export { phoneMask } from './phone-mask'
+export { removeSpecials } from './remove-specials'
