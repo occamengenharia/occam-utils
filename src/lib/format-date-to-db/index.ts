@@ -18,10 +18,4 @@ export const formatToDateDB: IFormatDateToDB = ({ date }) => {
   const result =
     ano + '-' + mes + '-' + dia + ' ' + hora + ':' + min + ':' + seg
   return result
-  // return new Intl.DateTimeFormat('pt-BR', {
-  //   year: 'numeric',
-  //   month: '2-digit',
-  //   day: '2-digit',
-  //   timeZone: 'UTC'
-  // }).format(dateObject)
 }
