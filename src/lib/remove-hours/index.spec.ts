@@ -1,8 +1,8 @@
 import { DateInvalid } from 'src/shared/errors/date-invalid'
 import { removeHours } from '.'
 
-describe('AddHours', () => {
-  it('should add hours to a date', () => {
+describe('RemoveHours', () => {
+  it('should remove hours to a date', () => {
     const date = new Date('2020-01-01')
     const hours = 1
     const result = removeHours(date, hours)
